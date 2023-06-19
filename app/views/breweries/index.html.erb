@@ -1,0 +1,14 @@
+# app/views/breweries/index.html.erb
+<h1>Breweries</h1>
+<p>Filter by Category:</p>
+<ul>
+  <% Category.all.each do |category| %>
+    <li><%= link_to category.name, breweries_path(category_id: category.id) %></li>
+  <% end %>
+</ul>
+<p>Filter by Subcategory:</p>
+<ul>
+  <% Subcategory.all.each do |subcategory| %>
+    <li><%= link_to subcategory.name, breweries_path(subcategory_id: subcategory.id) %></li>
+  <% end %>
+</ul>

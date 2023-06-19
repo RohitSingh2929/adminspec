@@ -1,0 +1,13 @@
+<h1>Hikes</h1>
+<p>Filter by Category:</p>
+<ul>
+  <% Category.all.each do |category| %>
+    <li><%= link_to category.name, hikes_path(category_id: category.id) %></li>
+  <% end %>
+</ul>
+<p>Filter by Subcategory:</p>
+<ul>
+  <% Subcategory.all.each do |subcategory| %>
+    <li><%= link_to subcategory.name, hikes_path(subcategory_id: subcategory.id) %></li>
+  <% end %>
+</ul>
